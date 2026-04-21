@@ -1,0 +1,331 @@
+:root {
+    --river-blue: #005f73;
+    --forest-green: #0a9396;
+    --sand-beige: #e9d8a6;
+    --dark-text: #222;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--dark-text);
+    margin: 0;
+}
+
+header {
+    background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent white */
+    padding: 15px 50px;
+    position: fixed; /* Stays at the top while you scroll */
+    width: 100%;
+    top: 0;
+    z-index: 1000; /* Keeps it above everything else */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #005f73; /* River blue */
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffb703; /* Changes to yellow when you hover */
+}
+.hero {
+    padding-top: 80px; /* This pushes the content down so the menu doesn't hide it */
+}
+.contact-section {
+    padding: 80px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.contact-container {
+    max-width: 600px;
+    margin: 40px auto;
+    text-align: left;
+    background: #f4f7f6;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #005f73;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: inherit;
+}
+
+.submit-btn {
+    width: 100%;
+    background-color: #0a9396;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #005f73;
+}
+footer {
+    background-color: #023047;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+/* This code only runs on screens smaller than 768px (Tablets and Phones) */
+@media (max-width: 768px) {
+    
+    /* 1. Make the Hero text smaller so it doesn't wrap awkwardly */
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    /* 2. Change the Navigation to stack or hide */
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        gap: 15px;
+        padding: 0;
+    }
+
+    /* 3. Make the cards take up more width on small screens */
+    .tour-card {
+        width: 100%; 
+        max-width: 400px; /* Prevents them from getting too huge on tablets */
+    }
+
+    .tours-grid {
+        padding: 0 10px;
+    }
+
+    /* 4. Adjust the contact form padding */
+    .contact-container {
+        margin: 20px;
+        padding: 20px;
+    }
+}
+.whatsapp-button i {
+    font-size: 1.5rem; /* Makes the icon a bit larger than the text */
+    vertical-align: middle;
+}
+
+/* Optional: Make it a floating circle icon in the corner */
+.whatsapp-floating-icon {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+    text-decoration: none;
+}
+.whatsapp-floating-fixed {
+    position: fixed;       /* This makes it stay on screen */
+    bottom: 30px;          /* 30px from the bottom */
+    right: 30px;           /* 30px from the right */
+    z-index: 9999;         /* Ensures it sits on top of everything */
+    
+    /* Styling the circle */
+    background-color: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+
+.whatsapp-floating-fixed:hover {
+    transform: scale(1.1);
+}
+.location-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f4f7f6;
+}
+
+.map-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.map-container iframe {
+    width: 100%; /* This makes the map responsive */
+    height: 450px;
+    border: none;
+}
+
+    display: none;
+.auto-scroll-container {
+    overflow: hidden; /* Hides the images that are off-screen */
+    background: white;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.scroll-track {
+    display: flex;
+    width: calc(250px * 8); /* (Image width * total images) */
+    animation: scroll-left 20s linear infinite;
+}
+
+.scroll-track img {
+    width: 250px;
+    height: 180px;
+    object-fit: cover;
+    margin: 0 10px;
+    border-radius: 8px;
+}
+
+/* This creates the movement */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* Move the track by half its total width */
+        transform: translateX(calc(-250px * 4)); 
+    }
+}
+
+/* Optional: Pause the animation when someone hovers their mouse */
+.scroll-track:hover {
+    animation-play-state: paused;
+}
+.hero {
+    background-image: url('"C:\Users\binsi\OneDrive\Desktop\kayaking\kayak1.jpg"');
+    /* ... rest of your code ... */
+}
+.modern-script {
+    font-family: 'Dancing Script', cursive; /* The handwriting font */
+    font-size: 3rem;                        /* Handwriting looks better when it's large */
+    color: #0077b6;                         /* A nice water-blue color */
+}
+.social-icons-fixed {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex; /* This puts them in a row */
+    gap: 15px;      /* This creates space between the two icons */
+    z-index: 9999;
+}
+
+.icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: white;
+    text-decoration: none;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s;
+}
+
+.icon:hover {
+    transform: scale(1.1);
+}
+
+/* Specific Colors */
+.whatsapp {
+    background-color: #25D366;
+}
+
+.instagram {
+    /* Instagram uses a gradient background */
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+}
+.social-icons-fixed {
+    flex-direction: column; /* This stacks them vertically */
+}
+.social-stack {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column; /* This is what stacks them vertically */
+    gap: 12px;              /* Space between the two circles */
+    z-index: 1000;
+}
+
+.icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+
+.icon:hover {
+    transform: translateY(-5px); /* Makes them pop up slightly when hovered */
+}
+
+/* Specific Colors */
+.whatsapp {
+    background-color: #25D366;
+}
+
+.instagram {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+}
